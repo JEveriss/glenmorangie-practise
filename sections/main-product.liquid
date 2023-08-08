@@ -23,14 +23,44 @@
 
 {% schema %}
   {
-    "name": "Volume",
+    "name": "Title",
     "tag": "section",
-    "class": "volume",
+    "class": "Title",
+    "limit": 1,
     "settings": [
       {
         "type": "text",
-        "id": "volume",
-        "label": "Volume"
+        "id": "title",
+        "label": "Title"
+      }
+    ],
+    "max_blocks": 5,
+    "blocks": [
+      {
+        "name": "Slide",
+        "type": "slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Title",
+        "settings": {
+          "title": "Title"
+        },
+        "blocks": [
+          {
+            "type": "slide"
+          }, {
+            "type": "slide"
+          }
+        ]
       }
     ]
   }
