@@ -1,7 +1,7 @@
-@font-face {
+/* @font-face {
   font-family: "Baskerville No 2";
   src: url("{{ 'baskerville_no_2_n4' | asset_url }}") format("WOFF");
-}
+} */
 :root {
   --main-orange: #ff7500;
   --main-font: #444444;

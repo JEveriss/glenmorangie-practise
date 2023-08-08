@@ -2,8 +2,8 @@
   .wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
+  
   img {
     height: 500px;
   }
@@ -11,18 +11,13 @@
 
 
 <div class="wrapper">
-
   <h2>{{ product.title }}</h2>
+
   <div>
-    <span>
       <img src="{{ product | image_url }}" />
-    </span>
-  </div>
-  <div>
 
     <h2>{{ product.price | money }}</h2>
     {{ product.description }}
-
   </div>
 </div>
 
