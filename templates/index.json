@@ -1,0 +1,9 @@
+{
+  "name": "Index",
+  "sections": {
+    "main": {
+      "type": "index"
+    }
+  },
+  "order": ["main"]
+}

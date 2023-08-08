@@ -1,0 +1,33 @@
+{% style %}
+
+  body {
+    background-color: #f2f2f2;
+  }
+
+  .wrapper {
+    display: flex;
+    width: 100%;
+  }
+  div {
+    display: flex;
+  }
+  img {
+    height: 180px;
+    margin: 10px;
+  }
+{% endstyle %}
+
+
+<div class="wrapper">
+  {% for product in collections['frontpage'].products %}
+    <div>
+      <img src="{{ product.featured_image | image_url }}" />
+
+      <span>
+        <h3>{{- product.title | link_to: product.url }}</h3>
+        <p>{{ product.price | money }}</p>
+      </span>
+
+    </div>
+  {% endfor %}
+</div>
