@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   img {
     height: 500px;
   }
@@ -14,7 +14,7 @@
   <h2>{{ product.title }}</h2>
 
   <div>
-      <img src="{{ product | image_url }}" />
+    <img src="{{ product | image_url }}" />
 
     <h2>{{ product.price | money }}</h2>
     {{ product.description }}
@@ -23,8 +23,15 @@
 
 {% schema %}
   {
-    "name": "main-product",
+    "name": "Volume",
     "tag": "section",
-    "class": "main-product"
+    "class": "volume",
+    "settings": [
+      {
+        "type": "text",
+        "id": "volume",
+        "label": "Volume"
+      }
+    ]
   }
 {% endschema %}
