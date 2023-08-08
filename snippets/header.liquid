@@ -1,4 +1,9 @@
-<p>header.liquid</p>
-{% for link in linklists.main-menu.links %}
-  <a href="{{ link.url }}">{{ link.title }}</a>
-{% endfor %}
+{{ 'header.css' | asset_url | stylesheet_tag }}
+<div class="header">
+  <p>{{ shop.name }}</p>
+  <div>
+    {% for link in linklists.main-menu.links %}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
+  </div>
+</div>

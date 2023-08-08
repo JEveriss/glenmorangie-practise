@@ -1,0 +1,12 @@
+.header {
+  background-color: var(--main-orange);
+  display: flex;
+  justify-content: space-between;
+  color: var(--main-white);
+}
+* {
+  background-color: transparent;
+}
+p {
+  text-transform: uppercase;
+}

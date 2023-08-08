@@ -1,16 +1,8 @@
 {% style %}
-
   .wrapper {
-    width: 1000px;
-    margin: auto;
     display: flex;
-  }
-  span {
-    text-align: center;
-    padding: 0 20px;
-  }
-  h2 {
-    width: 350px;
+    flex-direction: column;
+    justify-content: center;
   }
   img {
     height: 500px;
@@ -19,12 +11,25 @@
 
 
 <div class="wrapper">
-  <span>
-    <h2>{{ product.title }}</h2>
-    <img src="{{ product | image_url }}" />
+
+  <h2>{{ product.title }}</h2>
+  <div>
+    <span>
+      <img src="{{ product | image_url }}" />
+    </span>
+  </div>
+  <div>
+
     <h2>{{ product.price | money }}</h2>
-  </span>
+    {{ product.description }}
 
-  {{ product.description }}
-
+  </div>
 </div>
+
+{% schema %}
+  {
+    "name": "main-product",
+    "tag": "section",
+    "class": "main-product"
+  }
+{% endschema %}

@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "Baskerville No 2";
+  src: url("{{ 'baskerville_no_2_n4' | asset_url }}") format("WOFF");
+}
+:root {
+  --main-orange: #ff7500;
+  --main-font: #444444;
+  --main-white: #ffffff;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  background-color: var(--main-white);
+  color: var(--main-font);
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
