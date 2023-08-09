@@ -3,14 +3,15 @@
     display: flex;
     flex-direction: column;
   }
-
   img {
     height: 500px;
   }
 {% endstyle %}
 
+{% assign shop_name = shop.name %}
 
 <div class="wrapper">
+  <h2>{{ shop_name }}</h2>
   <h2>{{ product.title }}</h2>
 
   <div>
@@ -18,50 +19,7 @@
 
     <h2>{{ product.price | money }}</h2>
     {{ product.description }}
+
   </div>
 </div>
 
-{% schema %}
-  {
-    "name": "Title",
-    "tag": "section",
-    "class": "Title",
-    "limit": 1,
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Title"
-      }
-    ],
-    "max_blocks": 5,
-    "blocks": [
-      {
-        "name": "Slide",
-        "type": "slide",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Title",
-        "settings": {
-          "title": "Title"
-        },
-        "blocks": [
-          {
-            "type": "slide"
-          }, {
-            "type": "slide"
-          }
-        ]
-      }
-    ]
-  }
-{% endschema %}

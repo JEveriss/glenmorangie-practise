@@ -1,0 +1,30 @@
+<h1>{{ shop.name }}</h1>
+
+{% schema %}
+  {
+    "name": "Main Title",
+    "tag": "section",
+    "class": "main-title",
+    "limit": 1,
+    "settings": [
+      {
+        "type": "text",
+        "id": "main-title",
+        "label": "Main Title"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "SubHeading",
+        "type": "text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "subheading",
+            "label": "SubHeading"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
