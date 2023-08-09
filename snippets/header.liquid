@@ -1,10 +1,20 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
-
 <div class="header">
-  <p>{{ shop.name }}</p>
-  <div>
+
+  <a href="/" class="header_logo">{{ shop.name }}</a>
+
+  <div class="nav">
     {% for link in linklists.main-menu.links %}
       <a href="{{ link.url }}">{{ link.title }}</a>
     {% endfor %}
   </div>
+
+  <div class="header_icons">
+    <a href="/">GB|EN</a>
+    <a href="/">S</a>
+    <a href="/">&hearts;</a>
+    <a href="/">H</a>
+    <a href="/">B</a>
+  </div>
+
 </div>
