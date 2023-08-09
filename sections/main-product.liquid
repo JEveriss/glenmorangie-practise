@@ -13,7 +13,7 @@
   <h2>{{ product.title }}</h2>
 
   <div>
-    <img src="{{ product | asset_img_url_url }}">
+    <img src="{{ product | image_url }}">
 
     <h2>{{ product.price | money }}</h2>
     {{ product.description }}
