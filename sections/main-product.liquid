@@ -23,3 +23,21 @@
   </div>
 </div>
 
+{% schema %}
+  {
+    "name": "Product",
+    "settings": [
+      {
+        "type": "text",
+        "label": "Volume",
+        "id": "product_volume",
+        "default": "100ml"
+      }, {
+        "type": "text",
+        "label": "ABV",
+        "id": "product_abv",
+        "default": "40%"
+      }
+    ]
+  }
+{% endschema %}

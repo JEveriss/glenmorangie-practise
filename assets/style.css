@@ -21,6 +21,7 @@ html {
   font-family: "Times New Roman", Times, serif;
   background-color: var(--main-white);
   color: var(--main-font);
+  background-color: transparent;
 }
 
 body {
