@@ -9,12 +9,11 @@
   }
 {% endstyle %}
 
-
 <div class="wrapper">
   <h2>{{ product.title }}</h2>
 
   <div>
-    <img src="{{ product | image_url }}" />
+    <img src="{{ product | asset_img_url_url }}">
 
     <h2>{{ product.price | money }}</h2>
     {{ product.description }}
@@ -22,46 +21,46 @@
 </div>
 
 {% schema %}
-  {
-    "name": "Title",
-    "tag": "section",
-    "class": "Title",
-    "limit": 1,
-    "settings": [
-      {
-        "type": "text",
-        "id": "title",
-        "label": "Title"
-      }
-    ],
-    "max_blocks": 5,
-    "blocks": [
-      {
-        "name": "Slide",
-        "type": "slide",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Title",
-        "settings": {
-          "title": "Title"
-        },
-        "blocks": [
-          {
-            "type": "slide"
-          }, {
-            "type": "slide"
-          }
-        ]
-      }
-    ]
-  }
+{
+  "name": "Title",
+  "tag": "section",
+  "class": "Title",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Title",
+      "settings": {
+        "title": "Title"
+      },
+      "blocks": [
+        {
+          "type": "slide"
+        }, {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
