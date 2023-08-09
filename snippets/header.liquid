@@ -1,10 +1,78 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
 
+{% style %}
+
+  .header {
+    align-items: center;
+    padding: 0 2rem;
+    position: sticky;
+    height: 82px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    /* display: grid; */
+    /* grid-template-columns: 2fr 4fr 2fr; */
+
+    /*     display: grid;
+    grid-template-areas: 'menu logo cart';
+    grid-column-gap: var(--chakra-space-2);
+    grid-template-columns: 2fr 4fr 2fr;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-padding-start: var(--chakra-space-4);
+    padding-inline-start: var(--chakra-space-4);
+    -webkit-padding-end: var(--chakra-space-4);
+    padding-inline-end: var(--chakra-space-4);
+    padding-top: var(--chakra-space-3);
+    padding-bottom: var(--chakra-space-3);
+    min-height: 4rem;;
+    width: 100%;
+    z-index: 100;
+    overflow: visible; */
+
+  }
+  .header > p {
+    color: white;
+  }
+  .header_logo {
+    letter-spacing: -4px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    grid-area: logo;
+  }
+  .header_nav {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-transform: uppercase;
+  }
+  .header_icons > li:not(:last-child) {
+    padding-right: 1rem;
+  }
+  .header_icons {
+    display: flex;
+  }
+  li {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+  }
+{% endstyle %}
+
 <div class="header">
-  <p>{{ shop.name }}</p>
-  <div>
-    {% for link in linklists.main-menu.links %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-    {% endfor %}
-  </div>
+  <p class="header_logo">{{ shop.name }}</p>
+
+  {% for link in linklists.main-menu.links %}
+    <a class="header_nav" href="{{ link.url }}">{{ link.title }}</a>
+  {% endfor %}
+
+  <ul class="header_icons">
+    <li>GB-EN</li>
+    <li>Q</li>
+    <li>&lt;3</li>
+  </ul>
+
 </div>
