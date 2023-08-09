@@ -16,7 +16,7 @@
 <div class="wrapper">
   {% for product in collections['frontpage'].products %}
     <div>
-      <img src="{{ product.featured_image | image_url }}" />
+      <img src="{{ product.featured_image | image_url  }}" />
 
       <span>
         <h3>{{- product.title | link_to: product.url }}</h3>
