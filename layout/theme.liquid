@@ -5,12 +5,13 @@
       rel="preconnect"
       href="https://fonts.gstatic.com"
       crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     {{ content_for_header }}
     {{ 'style.css' | asset_url | stylesheet_tag }}
   </head>
   <body>
     {% render 'header' %}
+    {% section 'breadcrumbs' %}
     {{ content_for_layout }}
   </body>
 </html>
