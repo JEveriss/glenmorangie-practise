@@ -29,6 +29,8 @@
   }
 
   .nav {
+    display: grid;
+    grid-template-areas: '. . . . .';
     grid-area: nav;
     text-align: center;
     margin: 0 auto;
@@ -40,8 +42,7 @@
   .header_icons {
     align-items: center;
     grid-area: icons;
-    margin: 0 auto;
-    text-align: center;
+    display: flex;
   }
   .header_icons > a:not(:last-child) {
     margin-right: 1rem;

@@ -1,31 +1,112 @@
 {% style %}
   .wrapper {
+    max-width: 100rem;
+    margin: 0 auto;
+  }
+  .product_title {
+    color: var(--main-title);
+    text-transform: uppercase;
+    font-size: 9rem;
+    line-height: 0.8;
+    letter-spacing: -0.4rem;
+    text-align: center;
+  }
+  .product_body {
+    padding-top: 10rem;
+    max-width: 95rem;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
     display: flex;
+    gap: 10rem;
+  }
+  .product_body > span {
+    display: inherit;
     flex-direction: column;
+    width: 50%;
+  }
+  .product_title::before {
+    height: 30rem;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: var(--main-accent);
+  }
+  .product_price {
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: "Montserrat", sans-serif;
+  }
+  .buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  .buttons-wrapper > * {
+    color: var(--main-orange);
+    font-family: "Montserrat", sans-serif;
+    border: 0.2rem var(--main-orange) solid;
+    align-items: center;
+    margin-right: 1rem;
+  }
+  .buttons-wrapper > button,
+  .buttons-wrapper > p {
+
+    text-transform: uppercase;
+  }
+  .buttons-minus,
+  .buttons-add,
+  .favourite {
+    padding: 0 0.5rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: 2rem;
+  }
+  .current-quantity {
+    color: black;
+    border: none;
+  }
+  .add-to-basket {
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    margin: 0 0.8rem;
+    font-weight: 600;
+    color: var(--main-white);
+    background-color: var(--main-orange)
   }
   img {
-    height: 500px;
+    height: 600px;
   }
 {% endstyle %}
 
-{% assign shop_name = shop.name %}
-
 <div class="wrapper">
-  <h2>{{ shop_name }}</h2>
-  <h2>{{ product.title }}</h2>
 
-  <div>
+  <h2 class="product_title">{{ product.title }}</h2>
+
+  <div class="product_body">
+
     <img src="{{ product | image_url }}" />
 
-    <h2>{{ product.price | money }}</h2>
-    {{ product.description }}
-
+    <span>
+      <div class="buttons-wrapper">
+        <button class="buttons-minus">-</button>
+        <p class="current-quantity">2</p>
+        <button class="buttons-add">+</button>
+        <button class="add-to-basket">add to basket</button>
+        <button class="favourite">&hearts;</button>
+      </div>
+      <h2 class="product_price">{{ product.price | money }}</h2>
+      {{ product.description }}
+    </span>
   </div>
 </div>
 
 {% schema %}
   {
-    "name": "Product",
+    "name": "Main Product",
     "settings": [
       {
         "type": "text",
