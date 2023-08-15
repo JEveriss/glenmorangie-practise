@@ -29,6 +29,10 @@ html {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar{
+  display: none;
 }
 
 img,

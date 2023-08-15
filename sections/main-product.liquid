@@ -77,26 +77,49 @@
     color: var(--main-white);
     background-color: var(--main-orange)
   }
+  button.add-to-basket {
+    color: black;
+  }
+  .button-minus:disabled {
+    color: #000;
+  }
   img {
     height: 600px;
   }
 {% endstyle %}
-
+{% assign custom-var = product.metafields.custom %}
 <div class="wrapper">
 
   <h2 class="product_title">{{ product.title }}</h2>
+  {% if custom-var. %}
+
+    <h2>{{ custom-var.sub_title }}</h2>
+    <h2>{{ custom-var.alcohol_by_volume }}%</h2>
+    <h2>{{ custom-var.volume }}cl</h2>
+    <h1>{{ }}</h1>
+  {% endif %}
+
 
   <div class="product_body">
 
     <img src="{{ product | image_url }}" />
-
     <span>
       <div class="buttons-wrapper">
-        <button class="buttons-minus">-</button>
-        <p class="current-quantity">2</p>
-        <button class="buttons-add">+</button>
-        <button class="add-to-basket">add to basket</button>
-        <button class="favourite">&hearts;</button>
+        {% if product.available %}
+
+          <button class="buttons-minus">-</button>
+          <p class="current-quantity">2</p>
+          <button class="buttons-add">+</button>
+          <button class="add-to-basket">add to basket</button>
+          <button class="favourite">&hearts;</button>
+
+        {% else %}
+          <button disabled class="buttons-minus">-</button>
+          <p class="current-quantity">0</p>
+          <button class="buttons-add">+</button>
+          <button class="add-to-basket">add to basket</button>
+          <button class="favourite">&hearts;</button>
+        {% endif %}
       </div>
       <h2 class="product_price">{{ product.price | money }}</h2>
       {{ product.description }}
@@ -118,6 +141,10 @@
         "label": "ABV",
         "id": "product_abv",
         "default": "40%"
+      }, {
+        "type" : "text",
+        "label": "Sub-heading",
+        "id": "product_sub_heading"
       }
     ]
   }
