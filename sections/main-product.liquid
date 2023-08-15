@@ -87,18 +87,16 @@
     height: 600px;
   }
 {% endstyle %}
+
 {% assign custom-var = product.metafields.custom %}
 <div class="wrapper">
 
   <h2 class="product_title">{{ product.title }}</h2>
-  {% if custom-var. %}
 
-    <h2>{{ custom-var.sub_title }}</h2>
-    <h2>{{ custom-var.alcohol_by_volume }}%</h2>
-    <h2>{{ custom-var.volume }}cl</h2>
-    <h1>{{ }}</h1>
-  {% endif %}
-
+  <h2>{{ custom-var.sub_title }}</h2>
+  <h2>{{ custom-var.alcohol_by_volume }}%</h2>
+  <h2>{{ custom-var.volume }}cl</h2>
+  <h1>{{ }}</h1>
 
   <div class="product_body">
 
@@ -142,7 +140,7 @@
         "id": "product_abv",
         "default": "40%"
       }, {
-        "type" : "text",
+        "type": "text",
         "label": "Sub-heading",
         "id": "product_sub_heading"
       }
