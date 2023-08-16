@@ -1,0 +1,14 @@
+.footer-wrapper {
+  height: 30rem;
+  /* position: absolute; */
+  /* bottom: 0; */
+  width: 100%;
+  display: flex;
+  background-color: var(--main-title);
+}
+
+ul > li > a {
+  font-family: var(--second-font);
+  color: white;
+  font-size: 2rem;
+}
