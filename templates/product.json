@@ -1,17 +1,12 @@
 {
-  "name": "Product",
   "sections": {
     "main": {
       "type": "main-product",
-      "blocks": {
-        "title": {
-          "type": "text"
-        },
-        "subtitle": {
-          "type": "subtitle"
-        }
+      "settings": {
       }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
