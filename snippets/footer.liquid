@@ -4,24 +4,41 @@
 {% endstyle %}
 <div class="footer-wrapper">
 
-  <a href="/" class="footer_logo">{{ shop.name }}</a>
-  <div >
-    {% for link in linklists.main-menu.links %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
+{% for link in linklist %}
+  <h1>{{ link.title }}</h1>
+{% endfor %}
+
+  <ul class="footer-links">
+    {% for link in linklists['main-menu'].links %}
+      <li>
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
     {% endfor %}
-  </div>
-  <ul>
+  </ul>
+
+  <ul class="footer-links">
     {% for link in linklists['our-people'].links %}
       <li>
         <a href="{{ link.url }}">{{ link.title }}</a>
       </li>
     {% endfor %}
   </ul>
-  <ul>
+  
+  <ul class="footer-links">
     {% for link in linklists['responsibilities'].links %}
       <li>
         <a href="{{ link.url }}">{{ link.title }}</a>
       </li>
     {% endfor %}
   </ul>
+  
+  <ul class="footer-links">
+    {% for link in linklists['policies'].links %}
+      <li>
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
+      
+    {% endfor %}
+  </ul>
+  
 </div>
