@@ -1,33 +1,27 @@
 {{ 'footer.css' | asset_url | stylesheet_tag }}
 {% style %}
-  .footer > a {
-    color: #131200;
-  }
-  .footer {
-    display: flex;
-  }
+
 {% endstyle %}
-<div class="footer">
+<div class="footer-wrapper">
 
   <a href="/" class="footer_logo">{{ shop.name }}</a>
-
-  <div class="footer">
-    <ul>
-      {% for link in linklists['our-people'].links %}
-        <li>
-          <a href="{{ link.url }}">{{ link.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-    <ul>
-      {% for link in linklists['responsibilities'].links %}
-        <li>
-          <a href="{{ link.url }}">{{ link.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
+  <div >
+    {% for link in linklists.main-menu.links %}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
   </div>
-
-
-
+  <ul>
+    {% for link in linklists['our-people'].links %}
+      <li>
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <ul>
+    {% for link in linklists['responsibilities'].links %}
+      <li>
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
