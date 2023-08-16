@@ -1,9 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "page",
-      "settings": {
-      }
+      "type": "page-template"
     }
   },
   "order": [

@@ -12,14 +12,14 @@
 
 <div class="wrapper">
   {% for product in collections['frontpage'].products %}
-    <div>
+    <a href="{{ product.url }}">
       <img src="{{ product.featured_image | image_url  }}" />
 
       <span>
         <h3>{{- product.title | link_to: product.url }}</h3>
-        <p>{{ product.price | money }}</p>
+        <p>{{- product.price | money }}</p>
       </span>
 
-    </div>
+    </a>
   {% endfor %}
 </div>
