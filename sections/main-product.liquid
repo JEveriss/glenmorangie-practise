@@ -1,125 +1,39 @@
-{% style %}
-  .wrapper {
-    max-width: 100rem;
-    margin: 0 auto;
-  }
-  .product_title {
-    color: var(--main-title);
-    text-transform: uppercase;
-    font-size: 9rem;
-    line-height: 0.8;
-    letter-spacing: -0.4rem;
-    text-align: center;
-  }
-  .product_body {
-    padding-top: 10rem;
-    max-width: 95rem;
-    margin: 0 auto;
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    gap: 10rem;
-  }
-  .product_body > span {
-    display: inherit;
-    flex-direction: column;
-    width: 50%;
-  }
-  .product_title::before {
-    height: 30rem;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    background: var(--main-accent);
-  }
-  .product_price {
-    font-size: 4rem;
-    font-weight: 700;
-    font-family: "Montserrat", sans-serif;
-  }
-  .buttons-wrapper {
-    display: flex;
-    flex-direction: row;
-  }
-  .buttons-wrapper > * {
-    color: var(--main-orange);
-    font-family: "Montserrat", sans-serif;
-    border: 0.2rem var(--main-orange) solid;
-    align-items: center;
-    margin-right: 1rem;
-  }
-  .buttons-wrapper > button,
-  .buttons-wrapper > p {
-
-    text-transform: uppercase;
-  }
-  .buttons-minus,
-  .buttons-add,
-  .favourite {
-    padding: 0 0.5rem;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    font-size: 2rem;
-  }
-  .current-quantity {
-    color: black;
-    border: none;
-  }
-  .add-to-basket {
-    font-size: 1.2rem;
-    border-radius: 2rem;
-    margin: 0 0.8rem;
-    font-weight: 600;
-    color: var(--main-white);
-    background-color: var(--main-orange)
-  }
-  button.add-to-basket {
-    color: black;
-  }
-  .button-minus:disabled {
-    color: #000;
-  }
-  img {
-    height: 600px;
-  }
-{% endstyle %}
+{{ 'main-product.css' | asset_url | stylesheet_tag }}
 
 {% assign custom-var = product.metafields.custom %}
+
 <div class="wrapper">
 
   <h2 class="product_title">{{ product.title }}</h2>
-
-  <h2>{{ custom-var.sub_title }}</h2>
-  <h2>{{ custom-var.alcohol_by_volume }}%</h2>
-  <h2>{{ custom-var.volume }}cl</h2>
-  <h1>{{ }}</h1>
+  {% if custom-var.sub_title %}
+    <h3>{{ custom-var.sub_title }}</h3>
+  {% endif %}
 
   <div class="product_body">
 
     <img src="{{ product | image_url }}" />
     <span>
       <div class="buttons-wrapper">
-        {% if product.available %}
+        {% if product.selected_or_first_available_variant.inventory_quantity > 0 %}
 
           <button class="buttons-minus">-</button>
-          <p class="current-quantity">2</p>
+          <p class="current-quantity">{{ product.selected_or_first_available_variant.inventory_quantity }}</p>
           <button class="buttons-add">+</button>
           <button class="add-to-basket">add to basket</button>
           <button class="favourite">&hearts;</button>
 
         {% else %}
-          <button disabled class="buttons-minus">-</button>
-          <p class="current-quantity">0</p>
-          <button class="buttons-add">+</button>
-          <button class="add-to-basket">add to basket</button>
+          <h2>OUT OF STOCK</h2>
           <button class="favourite">&hearts;</button>
         {% endif %}
       </div>
       <h2 class="product_price">{{ product.price | money }}</h2>
+      {% if custom-var.alcohol_by_volume %}
+
+        <h2>{{ custom-var.alcohol_by_volume }}%</h2>
+        <h2>{{ custom-var.volume }}cl</h2>
+
+      {% endif %}
       {{ product.description }}
     </span>
   </div>

@@ -1,35 +1,10 @@
-{% style %}
+{{ 'page.css' | asset_url | stylesheet_tag }}
 
-  .page-wrapper {
-    margin: 0 2rem;
-  }
-  .page-title {
-    text-transform: uppercase;
-    font-size: 8rem;
-    text-align: center;
-  }
-  .page-paragraph {
-    font-size: 2rem;
-    max-width: 150rem;
-    margin: 0 auto;
-  }
-  .page-title::before {
-    height: 16rem;
-    content: "";
-    position: absolute;
-    top: 8.2rem;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    background: var(--main-accent);
-  }
-{% endstyle %}
 <div class="page-wrapper">
 
 <h1 class="page-title">{{ page.title }}</h1>
 
   <div class="page-paragraph">
-
-    <p>{{ page.content }}</p>
+   {{ page.content }}
   </div>
 </div>
