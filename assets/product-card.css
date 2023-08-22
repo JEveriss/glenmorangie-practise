@@ -1,0 +1,111 @@
+.product-card__wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 0px;
+}
+.product-card__title-wrapper {
+  position: absolute;
+  min-height: 6rem;
+  z-index: 5;
+  padding: 0 2rem;
+}
+.product-card__a {
+  align-items: center;
+}
+.product-card__h2 {
+  text-transform: uppercase;
+  font-size: 3.8rem;
+  letter-spacing: -3;
+  line-height: 0.8;
+}
+.product-card__h3 {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: var(--fourth-grey);
+}
+.product-card__image {
+  margin-top: 7.5rem;
+  height: 48rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--second-orange);
+  transition: 0.2s;
+}
+.product-card__image img {
+  margin: 6rem auto 0 auto;
+  height: 100%;
+  transition: 0.2s;
+}
+.product-card__div-text {
+  padding: 2.4rem;
+}
+.product-card__p {
+  font-size: 1.2rem;
+  color: var(--fourth-grey);
+}
+.product-card__price {
+  font-size: 3.6rem;
+  color: var(--main-font);
+  font-weight: 600;
+}
+.product-card__button {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border: none;
+  border-bottom: 2px solid var(--main-orange);
+  display: flex;
+  align-items: center;
+}
+.product-card__svg {
+  margin-right: 0.6rem;
+}
+
+.product-card__a:hover .product-card__image {
+  filter: brightness(0.8);
+}
+.product-card__a:hover .product-card__image .product-card__img {
+  transform: scale(1.1);
+}
+
+/* .product-card__image:after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  inset: 0px;
+  opacity: 0;
+  transition: opacity 0.2s linear 0s;
+} */
+/* .circle-wrapper {
+  position: relative;
+} */
+/* 
+}
+.circle {
+  height: 4rem;
+  width: 4rem;
+  color: white;
+  background-color: aqua;
+} */
+/* .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3.5rem;
+  border-radius: 5rem;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 158, 77);
+  z-index: 100;
+  opacity: 0;
+  height: 0px;
+  overflow: hidden;
+  transition:
+    opacity 0.1s linear 0s,
+    height 0.1s linear 0.1s;
+} */

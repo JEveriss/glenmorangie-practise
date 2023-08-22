@@ -11,9 +11,13 @@
 
     <ul class="footer-links footer-main-menu">
       {% for link in linklists['main-menu'].links %}
-        <li>
-          <a href="{{ link.url }}">{{ link.index }} {{ link.title }}</a>
-        </li>
+        {%- if link.title == 'Membership' %}
+          {% continue %}
+          {%- else -%}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {% endif %}
       {% endfor %}
     </ul>
     

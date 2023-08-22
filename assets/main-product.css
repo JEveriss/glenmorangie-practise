@@ -1,8 +1,13 @@
-.wrapper {
+.main-product__wrapper {
   max-width: 100rem;
   margin: 0 auto;
+  font-size: 1.4rem;
 }
-.product_title {
+.titles {
+  width: 100%;
+  margin-top: 8rem;
+}
+.main-product__title {
   color: var(--main-title);
   text-transform: uppercase;
   font-size: 9rem;
@@ -10,21 +15,27 @@
   letter-spacing: -0.4rem;
   text-align: center;
 }
-.product_body {
+.main-product__subtitle {
+  text-transform: uppercase;
+  font-family: var(--second-font);
+  text-align: center;
+  padding-top: 3rem;
+}
+.main-product__body {
   padding-top: 10rem;
   max-width: 95rem;
   margin: 0 auto;
   width: 100%;
-  justify-content: center;
+  justify-content: space-evenly;
   display: flex;
   gap: 10rem;
 }
-.product_body > span {
+.main-product__body > span {
   display: inherit;
   flex-direction: column;
   width: 50%;
 }
-.product_title::before {
+.main-product__title::before {
   height: 30rem;
   content: "";
   position: absolute;
@@ -34,43 +45,38 @@
   z-index: -1;
   background: var(--main-accent);
 }
-.product_price {
+.main-product__price {
   font-size: 4rem;
   font-weight: 700;
-  /* font-family: "Montserrat", sans-serif; */
 }
 button {
   font-size: 3rem;
   border: 0.2rem var(--main-orange) solid;
   align-items: center;
 }
-.buttons-wrapper {
+.main-product__buttons {
   display: flex;
   flex-direction: row;
 }
-/* .buttons-wrapper > * {
-  color: var(--main-orange);
-  font-family: "Montserrat", sans-serif;
-  margin-right: 1rem;
-} */
-.buttons-wrapper > button,
-.buttons-wrapper > p {
+
+.main-product__buttons > button,
+.main-product__buttons > p {
   text-transform: uppercase;
 }
-.buttons-minus,
-.buttons-add,
-.favourite {
+.main-product__buttons-minus,
+.main-product__buttons-add,
+.main-product__favourite {
   padding: 0 0.5rem;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
   font-size: 2rem;
 }
-.current-quantity {
+.main-product__quantity {
   color: black;
   border: none;
 }
-.add-to-basket {
+.main-product__basket {
   font-size: 1.2rem;
   border-radius: 2rem;
   margin: 0 0.8rem;
@@ -78,12 +84,12 @@ button {
   color: var(--main-white);
   background-color: var(--main-orange);
 }
-button.add-to-basket {
+button.main-product__basket {
   color: black;
 }
-.button-minus:disabled {
+.main-product__buttons-minus:disabled {
   color: #000;
 }
 img {
-  height: 600px;
+  height: 750px;
 }

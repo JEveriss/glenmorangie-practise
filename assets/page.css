@@ -14,25 +14,31 @@
   max-width: 150rem;
   margin: 0 auto;
 }
+.page-paragraph a {
+  color: var(--main-orange);
+}
 .page-paragraph > p {
-  font-family: var(--second-font);
   margin-bottom: 2rem;
 }
-.page-paragraph > h3 {
+.page-paragraph h3 {
   font-size: 5.2rem;
   margin: 2rem 0;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1;
   padding-top: 1.5rem;
 }
-.page-paragraph > ul {
+.page-paragraph h5 {
+  font-size: 2rem;
+  margin: 1rem 0; 
+}
+.page-paragraph ul {
   list-style: inside disc;
   margin-bottom: 3rem;
 }
-.page-paragraph > ul > li {
+.page-paragraph ul li {
   margin-bottom: 1rem;
 }
-.page-paragraph > ul > li::marker {
+.page-paragraph ul li::marker {
   margin-right: 3rem;
 }
 .page-title::before {

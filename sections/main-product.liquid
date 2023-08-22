@@ -1,41 +1,31 @@
 {{ 'main-product.css' | asset_url | stylesheet_tag }}
+{{ 'dropdown-table.css' | asset_url | stylesheet_tag }}
 
 {% assign custom-var = product.metafields.custom %}
 
-<div class="wrapper">
+<div class="main-product__wrapper">
+  <div class="titles">
+  
+  <h2 class="main-product__title">{{ product.title }}</h2>
+    {% if custom-var.sub_title %}
+      <h3 class="main-product__subtitle">{{ custom-var.sub_title }}</h3>
+    {% endif %}
+  </div>
 
-  <h2 class="product_title">{{ product.title }}</h2>
-  {% if custom-var.sub_title %}
-    <h3>{{ custom-var.sub_title }}</h3>
-  {% endif %}
-
-  <div class="product_body">
-
-    <img src="{{ product | image_url }}" />
-    <span>
-      <div class="buttons-wrapper">
-        {% if product.selected_or_first_available_variant.inventory_quantity > 0 %}
-
-          <button class="buttons-minus">-</button>
-          <p class="current-quantity">{{ product.selected_or_first_available_variant.inventory_quantity }}</p>
-          <button class="buttons-add">+</button>
-          <button class="add-to-basket">add to basket</button>
-          <button class="favourite">&hearts;</button>
-
-        {% else %}
-          <h2>OUT OF STOCK</h2>
-          <button class="favourite">&hearts;</button>
-        {% endif %}
-      </div>
-      <h2 class="product_price">{{ product.price | money }}</h2>
+  <div class="main-product__body">
+  <img src="{{ product | image_url }}" />
+    
+  <span>
       {% if custom-var.alcohol_by_volume %}
-
-        <h2>{{ custom-var.alcohol_by_volume }}%</h2>
-        <h2>{{ custom-var.volume }}cl</h2>
-
+      <h2 class="main-product__volumes">ABV: {{ custom-var.alcohol_by_volume }}% | VOLUME: {{ custom-var.volume }}cl</h2>
       {% endif %}
+      <h2 class="main-product__price">{{ product.price | money }}</h2>
+      <div class="main-product__buttons">
+      {% render 'product-buttons' %}
       {{ product.description }}
+      {% render 'dropdown-menu' %}
     </span>
+    
   </div>
 </div>
 

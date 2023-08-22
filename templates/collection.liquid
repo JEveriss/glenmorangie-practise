@@ -1,0 +1,22 @@
+{% style %}
+  .wrapper__list {
+    width: 130rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5.5rem 2.5rem;
+    padding: 5rem;
+    margin: 0 auto;
+  }
+  img {
+    height: 180px;
+    /* margin: 10px; */
+  }
+{% endstyle %}
+
+
+<h2>{{ page.title }}</h2>
+<ul class="wrapper__list">
+  {% for product in products %}
+    {% render 'product-card', product: product %}
+  {% endfor %}
+</ul>

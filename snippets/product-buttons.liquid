@@ -1,0 +1,15 @@
+{{ 'buttons.css' | asset_url | stylesheet_tag }}
+
+{% if product.selected_or_first_available_variant.inventory_quantity > 0 %}
+
+<button class="main-product__buttons-minus">-</button>
+<p class="main-product__quantity">{{ product.selected_or_first_available_variant.inventory_quantity }}</p>
+<button class="main-product__buttons-add">+</button>
+<button class="main-product__basket">add to basket</button>
+<button class="main-product__favourite">&hearts;</button>
+
+{% else %}
+<h2>OUT OF STOCK</h2>
+<button class="main-product__favourite">&hearts;</button>
+{% endif %}
+</div>
