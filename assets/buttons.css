@@ -24,6 +24,7 @@ button {
   border-radius: 50%;
   font-size: 3rem;
   color: var(--main-orange);
+  transition: 0.2s ease-in;
 }
 .product-buttons__minus {
   align-items: baseline;
@@ -50,16 +51,15 @@ button {
   padding: 1rem 2rem;
   margin: 0 1rem;
   text-transform: uppercase;
+  transition: 0.2s ease-in;
 }
 
 .product-buttons__h2 {
-  display: flex;
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  padding: 0 2rem;
   text-transform: uppercase;
-  color: red;
-  font-family: var(--main-font);
+  color: var(--main-red);
+  font-family: var(--second-font);
 }
 .product-buttons__minus:hover,
 .product-buttons__add:hover,
