@@ -1,7 +1,7 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
-<div class="header">
+<div class="header__wrapper">
 
-  <a href="/" class="header_logo">{{ shop.name }}</a>
+  <a href="/" class="header__logo">{{ shop.name }}</a>
 
   <div class="nav">
     {% for link in linklists.main-menu.links %}

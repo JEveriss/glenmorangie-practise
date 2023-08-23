@@ -40,10 +40,16 @@
 .product-card__div-text {
   padding: 2.4rem;
 }
+.product-card__div-text span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .product-card__p {
   font-size: 1.2rem;
   color: var(--fourth-grey);
 }
+
 .product-card__price {
   font-size: 3.6rem;
   color: var(--main-font);

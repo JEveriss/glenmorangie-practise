@@ -4,28 +4,35 @@
 {% assign custom-var = product.metafields.custom %}
 
 <div class="main-product__wrapper">
-  <div class="titles">
-  
-  <h2 class="main-product__title">{{ product.title }}</h2>
+  <div class="main-product__titles">
+
+    <h2 class="main-product__title">{{ product.title }}</h2>
     {% if custom-var.sub_title %}
       <h3 class="main-product__subtitle">{{ custom-var.sub_title }}</h3>
     {% endif %}
   </div>
 
   <div class="main-product__body">
-  <img src="{{ product | image_url }}" />
-    
-  <span>
-      {% if custom-var.alcohol_by_volume %}
-      <h2 class="main-product__volumes">ABV: {{ custom-var.alcohol_by_volume }}% | VOLUME: {{ custom-var.volume }}cl</h2>
+    <img src="{{ product | image_url }}" />
+
+    <span class="main-product__text">
+      {% if custom-var.abv %}
+        <p class="main-product__volumes">ABV: {{ custom-var.abv }}% | VOLUME: {{ custom-var.volume }}cl</p>
       {% endif %}
-      <h2 class="main-product__price">{{ product.price | money }}</h2>
-      <div class="main-product__buttons">
+
+      <span class="main-product__price">
+
+        <h2 >{{ product.price | money }}</h2>
+        <p>
+          Price excl. shipping</p>
+      </span>
+
       {% render 'product-buttons' %}
+      {% render 'shipping' %}
       {{ product.description }}
       {% render 'dropdown-menu' %}
     </span>
-    
+
   </div>
 </div>
 

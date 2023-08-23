@@ -1,13 +1,17 @@
 .page-wrapper {
   margin: 0 auto;
   max-width: 100rem;
-  padding-bottom: 5rem;
+  padding: 0 2.5rem 5rem 2.5rem;
 }
 .page-title {
+  color: var(--main-title);
   text-transform: uppercase;
-  font-size: 8rem;
+  font-size: 9rem;
+  line-height: 0.8;
+  letter-spacing: -0.4rem;
   text-align: center;
-  margin-bottom: 8rem;
+  margin-bottom: 6rem;
+  margin-top: 8rem;
 }
 .page-paragraph {
   font-size: 1.6rem;
@@ -29,10 +33,10 @@
 }
 .page-paragraph h5 {
   font-size: 2rem;
-  margin: 1rem 0; 
+  margin: 1rem 0;
 }
 .page-paragraph ul {
-  list-style: inside disc;
+  list-style: outside disc;
   margin-bottom: 3rem;
 }
 .page-paragraph ul li {
@@ -42,10 +46,10 @@
   margin-right: 3rem;
 }
 .page-title::before {
-  height: 16rem;
+  height: 30rem;
   content: "";
   position: absolute;
-  top: 8.2rem;
+  top: 0;
   left: 0;
   right: 0;
   z-index: -1;
