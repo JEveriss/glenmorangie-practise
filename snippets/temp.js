@@ -41,3 +41,10 @@
     <p class="chakra-text css-xgroy9">Out of Stock</p>
   </div>
 </li>;
+
+{
+  {
+    "buttons.css" | asset_url | stylesheet_tag;
+  }
+}
+

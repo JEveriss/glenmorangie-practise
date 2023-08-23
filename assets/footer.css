@@ -74,8 +74,11 @@ ul > li > a:hover {
 .footer-bottom a:hover {
   text-decoration: underline;
 }
-.footer-bottom span {
+.footer-bottom > div {
   width: var(--max-width);
-  display:flex;
+  display: flex;
   justify-content: space-between;
+}
+.footer-bottom > div > span > a {
+  padding-right: 4rem;
 }
