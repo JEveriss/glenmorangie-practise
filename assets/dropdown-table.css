@@ -1,3 +1,6 @@
+.dropdown__wrapper {
+  margin: 3rem 0;
+}
 .dropdown__summary {
   font-size: 1.2rem;
   font-weight: 600;
@@ -35,5 +38,8 @@ details p {
 .dropdown__wrapper ul {
   padding: 2rem;
   font-size: 1.4rem;
-  list-style: inside disc;
+  list-style: outside disc;
+}
+.dropdown__wrapper li {
+  margin-left: 2rem;
 }

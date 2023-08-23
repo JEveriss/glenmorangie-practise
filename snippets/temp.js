@@ -21,9 +21,7 @@
           src="https://res.cloudinary.com/shogun-frontend/image/fetch/f_auto,q_auto,c_limit,w_1280,h_2279/https://f.shgcdn.com/0222dc7f-c325-47c7-bf88-a3bb9ed3884f/"
           loading="lazy"
         />
-        <div class="circle css-1esxif3">
-          {/* this is the eye thing */}
-        </div>
+        <div class="circle css-1esxif3">{/* this is the eye thing */}</div>
       </div>
     </div>
   </a>
@@ -37,9 +35,15 @@
         type="button"
         class="chakra-button css-1yflpdi"
         aria-label="Add to wishlist"
-      >
-      </button>
+      ></button>
     </div>
     <p class="chakra-text css-xgroy9">Out of Stock</p>
   </div>
 </li>;
+
+{
+  {
+    "buttons.css" | asset_url | stylesheet_tag;
+  }
+}
+
