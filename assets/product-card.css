@@ -74,44 +74,7 @@
   transform: scale(1.1);
 }
 
-/* .product-card__image:after {
-  content: "";
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.4);
-  inset: 0px;
-  opacity: 0;
-  transition: opacity 0.2s linear 0s;
-} */
-/* .circle-wrapper {
-  position: relative;
-} */
-/* 
+.product-card__out-of-stock {
+  color: var(--main-red);
+  font-family: var(--second-font);
 }
-.circle {
-  height: 4rem;
-  width: 4rem;
-  color: white;
-  background-color: aqua;
-} */
-/* .circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 3.5rem;
-  border-radius: 5rem;
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  align-items: center;
-  color: rgb(255, 255, 255);
-  background-color: rgb(255, 158, 77);
-  z-index: 100;
-  opacity: 0;
-  height: 0px;
-  overflow: hidden;
-  transition:
-    opacity 0.1s linear 0s,
-    height 0.1s linear 0.1s;
-} */

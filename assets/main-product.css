@@ -47,7 +47,7 @@
   left: 0;
   right: 0;
   z-index: -1;
-  background: var(--main-accent);
+  background: var(--third-orange);
 }
 .main-product__price > h2 {
   font-size: 6rem;

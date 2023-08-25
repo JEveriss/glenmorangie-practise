@@ -11,7 +11,7 @@
 }
 .header__logo {
   color: var(--main-white);
-  font-family: var(--main-font);
+  font-family: var(--first-font);
   font-size: 2.8rem;
   grid-area: logo;
   letter-spacing: -0.4rem;
