@@ -2,23 +2,24 @@
   font-family: "Baskerville No 2";
   src: url("{{ 'baskerville_no_2_n4' | asset_url }}") format("WOFF");
 } */
+
 :root {
+  --fourth-orange: #e66900;
   --main-orange: #ff7500;
-  --second-orange: #fff1e6;
   --third-orange: #ffe3cc;
-  --main-font: #444444;
+  --second-orange: #fff1e6;
+  --main-red: #b42318;
   --main-white: #ffffff;
-  --main-title: #101828;
-  --main-accent: #fff1e6;
-  --second-grey: #98a2b3;
-  --third-grey: #a5a5a5;
-  --fourth-grey: #898989;
   --fifth-grey: #eeeeee;
   --sixth-grey: #e6ede9;
-  --seventh-grey:#e6eaf3;
+  --seventh-grey: #e6eaf3;
+  --second-grey: #98a2b3;
+  --fourth-grey: #898989;
+  --third-grey: #a5a5a5;
+  --main-font: #444444;
   --second-accent: #1d2939;
-  --main-red: #B42318;
-  --main-font: "Times New Roman", Times, serif;
+  --main-title: #101828;
+  --first-font: "Times New Roman", Times, serif;
   --second-font: "Montserrat", sans-serif;
   --max-width: 120rem;
 }
@@ -34,14 +35,14 @@ html {
 * {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--second-font);
   background-color: var(--main-white);
-  color: var(--main-font);
   background-color: transparent;
   text-decoration: none;
 }
 
 body {
+  color: var(--main-font);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   scrollbar-width: none;
