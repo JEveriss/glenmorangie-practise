@@ -1,5 +1,6 @@
 {{ 'main-product.css' | asset_url | stylesheet_tag }}
 {{ 'dropdown-table.css' | asset_url | stylesheet_tag }}
+{{ 'shipping.css' | asset_url | stylesheet_tag }}
 
 {% assign custom-var = product.metafields.custom %}
 
@@ -21,16 +22,20 @@
       {% endif %}
 
       <span class="main-product__price">
-
-        <h2 >{{ product.price | money }}</h2>
-        <p>
-          Price excl. shipping</p>
+        <h2>{{ product.price | money }}</h2>
+        <p>Price excl. shipping</p>
       </span>
 
       {% render 'product-buttons' %}
       {% render 'shipping' %}
       {{ product.description }}
-      {% render 'dropdown-menu' %}
+
+      <div class="main-product__dropdown">
+        {% render 'dropdown-menu', title: 'How To Enjoy', content: custom-var.how_to_enjoy %}
+        {% render 'dropdown-menu', title: 'Blend and Origin', content: custom-var.blend_and_origin %}
+        {% render 'dropdown-menu', title: 'Delivery Information', content: custom-var.delivery_information %}
+      </div>
+
     </span>
 
   </div>

@@ -1,6 +1,3 @@
-.dropdown__wrapper {
-  margin: 3rem 0;
-}
 .dropdown__summary {
   font-size: 1.2rem;
   font-weight: 600;
@@ -19,7 +16,9 @@
   width: 1.2rem;
   height: 1.2rem;
 }
-
+.dropdown__summary > div p {
+  padding: 1rem;
+}
 .dropdown__summary:hover {
   background-color: var(--third-orange);
 }
@@ -31,9 +30,19 @@
 .dropdown__details[open] summary svg {
   transform: rotate(180deg);
 }
-details p {
-  padding: 2rem;
+.dropdown__details > p:empty {
+  display: none;
+}
+details h3,
+details p,
+details ul {
+  padding: 1rem 2rem;
   font-size: 1.4rem;
+}
+details a {
+  color: var(--main-orange);
+  text-decoration: underline;
+  font-weight: 700;
 }
 .dropdown__wrapper ul {
   padding: 2rem;

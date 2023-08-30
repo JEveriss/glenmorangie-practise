@@ -1,6 +1,6 @@
 <style>
   .breadcrumbs {
-    margin: 4rem 3rem 4rem 3rem;
+    margin: 4rem 3rem;
     font-size: 1.4rem;
   }
 
@@ -27,10 +27,14 @@
     margin: 0 0.6rem 0 0.2rem;
     width: 0.8rem;
   }
-
+  a.breadcrumbs__link {
+    text-decoration: none;
+    color: var(--main-font);
+    text-transform: uppercase;
+  }
 
   .breadcrumbs__link[aria-current="page"] {
-    color: inherit;
+    color: var(--main-font);
     font-weight: normal;
     text-decoration: none;
     text-transform: uppercase;
