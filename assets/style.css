@@ -29,7 +29,7 @@
   box-sizing: border-box;
 }
 html {
-  font-size: 62.5%;
+  font-size: 50%;
 }
 
 * {
@@ -49,6 +49,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-size: 1.6rem;
 }
 body::-webkit-scrollbar {
   display: none;

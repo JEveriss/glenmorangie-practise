@@ -2,9 +2,13 @@
 
 <div class="dropdown__wrapper">
   <details class="dropdown__details">
- {{ custom-var.how_to_enjoy | metafield_tag }}
+    {% if custom-var.blend_and_origin %}
+      <p>{{ content | metafield_tag }}</p>
+    {% else %}
+      {{ content }}
+    {% endif %}
     <summary class="dropdown__summary">
-      How To Enjoy
+      {{ title }}
       <svg
         class="dropdown__svg"
         width="18"
@@ -19,44 +23,4 @@
       </svg>
     </summary>
   </details>
-  
-  <details class="dropdown__details">
-    <p>{{ custom-var.blend_and_origin }}</p>
-    <summary class="dropdown__summary">
-      Blend and origin
-      <svg
-        class="dropdown__svg"
-        width="18"
-        height="9"
-        viewBox="0 0 18 9"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M1 1L9 8L17 1"
-          stroke="black"
-          stroke-width="2.5" />
-      </svg>
-    </summary>
-  </details>
-  
-  </details>
-  <details class="dropdown__details">
-   {{ custom-var.delivery_information | metafield_tag }}
-    <summary class="dropdown__summary">
-      Delivery Information
-      <svg
-        class="dropdown__svg"
-        width="18"
-        height="9"
-        viewBox="0 0 18 9"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M1 1L9 8L17 1"
-          stroke="black"
-          stroke-width="2.5" />
-      </svg>
-    </summary>
-  </details>
-
 </div>

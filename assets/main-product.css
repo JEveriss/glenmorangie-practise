@@ -47,7 +47,7 @@
   left: 0;
   right: 0;
   z-index: -1;
-  background: var(--third-orange);
+  background: var(--second-orange);
 }
 .main-product__price > h2 {
   font-size: 6rem;
@@ -56,7 +56,9 @@
   color: var(--main-font);
   padding-right: 1.5rem;
 }
-
+.main-product__dropdown {
+  margin: 3rem 0;
+}
 img {
   height: 750px;
   margin: 0 auto;
@@ -65,4 +67,29 @@ img {
 .main-product__price {
   display: flex;
   align-items: baseline;
+}
+
+@media only screen and (max-width: 990px) {
+  .main-product__title {
+    font-size: 5.2rem;
+  }
+  .main-product__title::before {
+    height: 20rem;
+  }
+  .main-product__subtitle {
+    font-size: 0.5rem;
+    padding-bottom: 3rem;
+  }
+  .main-product__titles {
+    margin: 0;
+  }
+  .main-product__body {
+    display: block;
+    width: 100%;
+    padding: 0 3rem;
+    font-size: 1rem;
+  }
+  .main-product__text {
+    width: 100%;
+  }
 }

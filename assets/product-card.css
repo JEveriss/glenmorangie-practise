@@ -49,7 +49,6 @@
   font-size: 1.2rem;
   color: var(--fourth-grey);
 }
-
 .product-card__price {
   font-size: 3.6rem;
   color: var(--main-font);
@@ -66,15 +65,27 @@
 .product-card__svg {
   margin-right: 0.6rem;
 }
-
 .product-card__a:hover .product-card__image {
   filter: brightness(0.8);
 }
 .product-card__a:hover .product-card__image .product-card__img {
   transform: scale(1.1);
 }
-
 .product-card__out-of-stock {
   color: var(--main-red);
   font-family: var(--second-font);
+}
+
+@media only screen and (max-width: 790px) {
+  .product-card__h2 {
+    font-size: 2.8rem;
+  }
+  .product-card__image {
+    margin-top: 6.5rem;
+  }
+}
+@media only screen and (max-width: 670px) {
+  .product-card__h2 {
+    font-size: 3.5rem;
+  }
 }
