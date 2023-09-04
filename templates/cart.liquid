@@ -1,1 +1,41 @@
-<h1>this is the cart</h1>
+{% style %}
+  .trashIcon {
+height: 2rem;
+width: 2rem;
+color: black;
+  }
+  hr {
+    margin: 5rem 0;
+  }
+{% endstyle %}
+
+{% form 'cart', cart %}
+
+  <h1>Cart</h1>
+
+  {% if cart.empty? %}
+    <h2>The cart is empty</h2>
+  {% else %}
+
+    {% for item in cart.items %}
+      <div>
+        <h2>{{ item.title }}</h2>
+        <img src="{{ item.image | image_url: height: 250 }}" />
+        <p>{{ item.final_line_price | money }}</p>
+        <input name="updates[]" value="{{ item.quantity }}" />
+        <a href="{{ item.url_to_remove }}">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="trashIcon">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h18M8 6V4c0-.53043.21071-1.03914.58579-1.41421C8.96086 2.21071 9.46957 2 10 2h4c.5304 0 1.0391.21071 1.4142.58579C15.7893 2.96086 16 3.46957 16 4v2m3 0v14c0 .5304-.2107 1.0391-.5858 1.4142S17.5304 22 17 22H7c-.53043 0-1.03914-.2107-1.41421-.5858C5.21071 21.0391 5 20.5304 5 20V6h14ZM10 11v6"></path>
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 11v6"></path></svg></a>
+      </div>
+    {% endfor %}
+    <hr/>
+    
+    <button type="submit" name="update">Update Cart</button>
+    <button type="submit" name="checkout">Proceed to Checkout</button>
+    <h2>
+      Subtotal: {{ cart.items_subtotal_price | money }}</h2>
+    <h2>Items: {{ cart.item_count }}</h2>
+    <h2></h2>
+  {% endif %}
+{% endform %}

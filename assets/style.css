@@ -1,8 +1,3 @@
-/* @font-face {
-  font-family: "Baskerville No 2";
-  src: url("{{ 'baskerville_no_2_n4' | asset_url }}") format("WOFF");
-} */
-
 :root {
   --fourth-orange: #e66900;
   --main-orange: #ff7500;
@@ -10,6 +5,7 @@
   --second-orange: #fff1e6;
   --main-red: #b42318;
   --main-white: #ffffff;
+  --second-white: #f2f4f7;
   --fifth-grey: #eeeeee;
   --sixth-grey: #e6ede9;
   --seventh-grey: #e6eaf3;
@@ -19,9 +15,9 @@
   --main-font: #444444;
   --second-accent: #1d2939;
   --main-title: #101828;
+  --main-green: #1a5d39;
   --first-font: "Times New Roman", Times, serif;
   --second-font: "Montserrat", sans-serif;
-  --max-width: 120rem;
 }
 *,
 *::before,
@@ -29,14 +25,16 @@
   box-sizing: border-box;
 }
 html {
-  font-size: 50%;
+  font-size: 62.5%;
+}
+svg {
+  color: white;
 }
 
 * {
   margin: 0;
   padding: 0;
   font-family: var(--second-font);
-  background-color: var(--main-white);
   background-color: transparent;
   text-decoration: none;
 }

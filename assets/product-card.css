@@ -63,6 +63,7 @@
   align-items: center;
 }
 .product-card__svg {
+  color: inherit;
   margin-right: 0.6rem;
 }
 .product-card__a:hover .product-card__image {
